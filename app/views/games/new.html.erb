@@ -7,9 +7,13 @@
 </ul>
 
 <div class="question">What is the longest word you can find ?</div>
-<div class="input-group">
-    <input type="text" class="form-control" name="word" id="word">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Play</button>
-    </span>
-</div>
+<form action="/score" method="post">
+  <div class="input-group">
+      <input type="text" class="form-control" name="word" id="word">
+      <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Play</button>
+      </span>
+  </div>
+  <input id="letters" name="letters" type="hidden" value="<%=@letters%>"/>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
